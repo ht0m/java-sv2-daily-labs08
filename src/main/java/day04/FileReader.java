@@ -16,7 +16,7 @@ public class FileReader {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        int minSpread = 1000;
+        int minSpread = Integer.MAX_VALUE;
         int day = 0;
 
         for (int i = 2; i < 32; i++) {
