@@ -19,14 +19,19 @@ public class FileReader {
         int minSpread = Integer.MAX_VALUE;
         int day = 0;
 
-        for (int i = 2; i < 32; i++) {
-            int dailyMax = Integer.parseInt(file.get(i).substring(6, 8).trim());
-            int dailyMin = Integer.parseInt(file.get(i).substring(12, 14).trim());
-            if (dailyMax - dailyMin < minSpread) {
-                minSpread = dailyMax - dailyMin;
-                day = Integer.parseInt(file.get(i).substring(2, 4).trim());
+        try {
+            for (int i = 2; i < 32; i++) {
+                int dailyMax = Integer.parseInt(file.get(i).substring(6, 8).trim());
+                int dailyMin = Integer.parseInt(file.get(i).substring(12, 14).trim());
+                if (dailyMax - dailyMin < minSpread) {
+                    minSpread = dailyMax - dailyMin;
+                    day = Integer.parseInt(file.get(i).substring(2, 4).trim());
+                }
             }
+        } catch (NumberFormatException ne) {
+            throw new IllegalArgumentException("Illegal format", ne);
         }
+
         return day;
     }
 }
