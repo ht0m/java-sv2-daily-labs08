@@ -20,7 +20,7 @@ public class FileReader {
         int day = 0;
 
         try {
-            for (int i = 2; i < 32; i++) {
+            for (int i = 2; i < file.size() - 1; i++) {
                 int dailyMax = Integer.parseInt(file.get(i).substring(6, 8).trim());
                 int dailyMin = Integer.parseInt(file.get(i).substring(12, 14).trim());
                 if (dailyMax - dailyMin < minSpread) {
