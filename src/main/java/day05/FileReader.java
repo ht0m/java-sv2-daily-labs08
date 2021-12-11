@@ -1,4 +1,4 @@
-package day04;
+package day05;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -71,4 +71,7 @@ public class FileReader {
 
 }
 
+// readfile-t kitenni
+// paraméternek varargs: melyik sorokat nem kell beolvasni
+// visszadatoot adatoknak külön osztály legyen
 
